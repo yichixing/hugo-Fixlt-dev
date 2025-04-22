@@ -138,5 +138,5 @@
 ---
 
 > Author:   
-> URL: https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0hugo%E5%8D%9A%E5%AE%A2/  
+> URL: /posts/hugo%E5%8D%9A%E5%AE%A2/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0hugo%E5%8D%9A%E5%AE%A2/  
 
