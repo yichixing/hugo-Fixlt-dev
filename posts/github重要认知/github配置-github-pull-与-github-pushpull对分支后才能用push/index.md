@@ -1,4 +1,4 @@
-# Gith配置：2 Github Pull 与 Github Push，pull对分支后才能用push
+# Github配置：2 Github Pull 与 Github Push，pull对分支后才能用push
 
 
 
