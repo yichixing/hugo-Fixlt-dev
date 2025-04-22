@@ -5,44 +5,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>My First Post - 笔记博客</title><meta name="author" content="">
-<meta name="description" content="A blog (a truncation of &ldquo;weblog&rdquo;) is an informational website published on the World Wide Web consisting of discrete, often informal diary-style text entries (posts). Posts are typically displayed in reverse chronological order so that the most recent post appears first, at the top of the web page. Until 2009, blogs were usually the work of a single individual,[citation needed] occasionally of a small group, and often covered a single subject or topic. In the 2010s, &ldquo;multi-author blogs&rdquo; (MABs) emerged, featuring the writing of multiple authors and sometimes professionally edited. MABs from newspapers, other media outlets, universities, think tanks, advocacy groups, and similar institutions account for an increasing quantity of blog traffic. The rise of Twitter and other &ldquo;microblogging&rdquo; systems helps integrate MABs and single-author blogs into the news media. Blog can also be used as a verb, meaning to maintain or add content to a blog.
-"><meta name="keywords" content='blog'>
-  <meta itemprop="name" content="My First Post">
-  <meta itemprop="description" content="A blog (a truncation of “weblog”) is an informational website published on the World Wide Web consisting of discrete, often informal diary-style text entries (posts). Posts are typically displayed in reverse chronological order so that the most recent post appears first, at the top of the web page. Until 2009, blogs were usually the work of a single individual,[citation needed] occasionally of a small group, and often covered a single subject or topic. In the 2010s, “multi-author blogs” (MABs) emerged, featuring the writing of multiple authors and sometimes professionally edited. MABs from newspapers, other media outlets, universities, think tanks, advocacy groups, and similar institutions account for an increasing quantity of blog traffic. The rise of Twitter and other “microblogging” systems helps integrate MABs and single-author blogs into the news media. Blog can also be used as a verb, meaning to maintain or add content to a blog.">
+    <title>使用.gitignore的意义 - 笔记博客</title><meta name="author" content="">
+<meta name="description" content="(01:24-02:04) 2.4: 配置 .gitignore 忽略生成文件
+说明：Hugo 项目中的某些文件/目录是自动生成的，不应该提交到源代码仓库，包括： public/：Hugo 生成的静态网站文件目录。 resources/：Hugo 处理后的资源缓存目录。 hugo.build.lock：构建锁文件。 hugo.exe：（如果在 Windows 下）Hugo 可执行文件本身。 ♈ 操作：在本地 Hugo 项目根目录下，创建一个名为 .gitignore 的文件。 ♈操作：编辑 .gitignore 文件，将上述需要忽略的文件名或目录名（如 public, resources, hugo.build.lock, hugo.exe）添加进去，每行一个。 ♈目的：保证上传到 GitHub 的是最干净、最原始的 Hugo 项目文件。 《♓目的就是不要让静态资源污染源码，因为hugo-main是源代码仓库，源代码仓库不负责展示github page，只负责运行action得到静态资源给其它部署仓库hugo-dev，所以没必要把多余的静态资源上传到hugo-main，反正在hugo-main展示这些静态资源》 &lt;git add .：添加所有文件到暂存区（♎.gitignore 会生效，忽略指定文件）。&gt; "><meta name="keywords" content='github项目配置'>
+  <meta itemprop="name" content="使用.gitignore的意义">
+  <meta itemprop="description" content="(01:24-02:04) 2.4: 配置 .gitignore 忽略生成文件
+说明：Hugo 项目中的某些文件/目录是自动生成的，不应该提交到源代码仓库，包括： public/：Hugo 生成的静态网站文件目录。 resources/：Hugo 处理后的资源缓存目录。 hugo.build.lock：构建锁文件。 hugo.exe：（如果在 Windows 下）Hugo 可执行文件本身。 ♈ 操作：在本地 Hugo 项目根目录下，创建一个名为 .gitignore 的文件。 ♈操作：编辑 .gitignore 文件，将上述需要忽略的文件名或目录名（如 public, resources, hugo.build.lock, hugo.exe）添加进去，每行一个。 ♈目的：保证上传到 GitHub 的是最干净、最原始的 Hugo 项目文件。 《♓目的就是不要让静态资源污染源码，因为hugo-main是源代码仓库，源代码仓库不负责展示github page，只负责运行action得到静态资源给其它部署仓库hugo-dev，所以没必要把多余的静态资源上传到hugo-main，反正在hugo-main展示这些静态资源》 &lt;git add .：添加所有文件到暂存区（♎.gitignore 会生效，忽略指定文件）。&gt;">
   <meta itemprop="datePublished" content="2023-02-20T20:14:22+08:00">
   <meta itemprop="dateModified" content="2023-02-20T20:14:22+08:00">
-  <meta itemprop="wordCount" content="147">
-  <meta itemprop="keywords" content="Blog"><meta property="og:url" content="https://yichixing.github.io/hugo-Fixlt-dev/posts/first_post/">
+  <meta itemprop="wordCount" content="40">
+  <meta itemprop="keywords" content="Github项目配置"><meta property="og:url" content="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/%E4%BD%BF%E7%94%A8/">
   <meta property="og:site_name" content="笔记博客">
-  <meta property="og:title" content="My First Post">
-  <meta property="og:description" content="A blog (a truncation of “weblog”) is an informational website published on the World Wide Web consisting of discrete, often informal diary-style text entries (posts). Posts are typically displayed in reverse chronological order so that the most recent post appears first, at the top of the web page. Until 2009, blogs were usually the work of a single individual,[citation needed] occasionally of a small group, and often covered a single subject or topic. In the 2010s, “multi-author blogs” (MABs) emerged, featuring the writing of multiple authors and sometimes professionally edited. MABs from newspapers, other media outlets, universities, think tanks, advocacy groups, and similar institutions account for an increasing quantity of blog traffic. The rise of Twitter and other “microblogging” systems helps integrate MABs and single-author blogs into the news media. Blog can also be used as a verb, meaning to maintain or add content to a blog.">
+  <meta property="og:title" content="使用.gitignore的意义">
+  <meta property="og:description" content="(01:24-02:04) 2.4: 配置 .gitignore 忽略生成文件
+说明：Hugo 项目中的某些文件/目录是自动生成的，不应该提交到源代码仓库，包括： public/：Hugo 生成的静态网站文件目录。 resources/：Hugo 处理后的资源缓存目录。 hugo.build.lock：构建锁文件。 hugo.exe：（如果在 Windows 下）Hugo 可执行文件本身。 ♈ 操作：在本地 Hugo 项目根目录下，创建一个名为 .gitignore 的文件。 ♈操作：编辑 .gitignore 文件，将上述需要忽略的文件名或目录名（如 public, resources, hugo.build.lock, hugo.exe）添加进去，每行一个。 ♈目的：保证上传到 GitHub 的是最干净、最原始的 Hugo 项目文件。 《♓目的就是不要让静态资源污染源码，因为hugo-main是源代码仓库，源代码仓库不负责展示github page，只负责运行action得到静态资源给其它部署仓库hugo-dev，所以没必要把多余的静态资源上传到hugo-main，反正在hugo-main展示这些静态资源》 &lt;git add .：添加所有文件到暂存区（♎.gitignore 会生效，忽略指定文件）。&gt;">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2023-02-20T20:14:22+08:00">
     <meta property="article:modified_time" content="2023-02-20T20:14:22+08:00">
-    <meta property="article:tag" content="Blog">
+    <meta property="article:tag" content="Github项目配置">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="My First Post">
-  <meta name="twitter:description" content="A blog (a truncation of “weblog”) is an informational website published on the World Wide Web consisting of discrete, often informal diary-style text entries (posts). Posts are typically displayed in reverse chronological order so that the most recent post appears first, at the top of the web page. Until 2009, blogs were usually the work of a single individual,[citation needed] occasionally of a small group, and often covered a single subject or topic. In the 2010s, “multi-author blogs” (MABs) emerged, featuring the writing of multiple authors and sometimes professionally edited. MABs from newspapers, other media outlets, universities, think tanks, advocacy groups, and similar institutions account for an increasing quantity of blog traffic. The rise of Twitter and other “microblogging” systems helps integrate MABs and single-author blogs into the news media. Blog can also be used as a verb, meaning to maintain or add content to a blog.">
+  <meta name="twitter:title" content="使用.gitignore的意义">
+  <meta name="twitter:description" content="(01:24-02:04) 2.4: 配置 .gitignore 忽略生成文件
+说明：Hugo 项目中的某些文件/目录是自动生成的，不应该提交到源代码仓库，包括： public/：Hugo 生成的静态网站文件目录。 resources/：Hugo 处理后的资源缓存目录。 hugo.build.lock：构建锁文件。 hugo.exe：（如果在 Windows 下）Hugo 可执行文件本身。 ♈ 操作：在本地 Hugo 项目根目录下，创建一个名为 .gitignore 的文件。 ♈操作：编辑 .gitignore 文件，将上述需要忽略的文件名或目录名（如 public, resources, hugo.build.lock, hugo.exe）添加进去，每行一个。 ♈目的：保证上传到 GitHub 的是最干净、最原始的 Hugo 项目文件。 《♓目的就是不要让静态资源污染源码，因为hugo-main是源代码仓库，源代码仓库不负责展示github page，只负责运行action得到静态资源给其它部署仓库hugo-dev，所以没必要把多余的静态资源上传到hugo-main，反正在hugo-main展示这些静态资源》 &lt;git add .：添加所有文件到暂存区（♎.gitignore 会生效，忽略指定文件）。&gt;">
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/first_post/" title="My First Post - 笔记博客" /><link rel="prev" type="text/html" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/%E4%BD%BF%E7%94%A8/" title="使用.gitignore的意义" /><link rel="next" type="text/html" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionai%E7%BC%96%E5%86%99action%E7%A8%8B%E5%BA%8F%E6%8A%80%E5%B7%A7/" title="github action：3 AI编写action程序技巧" /><link rel="alternate" type="text/markdown" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/first_post/index.md" title="My First Post - 笔记博客"><link rel="stylesheet" href="/hugo-Fixlt-dev/css/style.min.css"><link rel="preload" href="/hugo-Fixlt-dev/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/%E4%BD%BF%E7%94%A8/" title="使用.gitignore的意义 - 笔记博客" /><link rel="next" type="text/html" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/first_post/" title="My First Post" /><link rel="alternate" type="text/markdown" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/%E4%BD%BF%E7%94%A8/index.md" title="使用.gitignore的意义 - 笔记博客"><link rel="stylesheet" href="/hugo-Fixlt-dev/css/style.min.css"><link rel="preload" href="/hugo-Fixlt-dev/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/hugo-Fixlt-dev/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/hugo-Fixlt-dev/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/hugo-Fixlt-dev/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "My First Post",
+    "headline": "使用.gitignore的意义",
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/yichixing.github.io\/hugo-Fixlt-dev\/posts\/first_post\/"
-    },"genre": "posts","keywords": "blog","wordcount":  147 ,
-    "url": "https:\/\/yichixing.github.io\/hugo-Fixlt-dev\/posts\/first_post\/","datePublished": "2023-02-20T20:14:22+08:00","dateModified": "2023-02-20T20:14:22+08:00","publisher": {
+      "@id": "https:\/\/yichixing.github.io\/hugo-Fixlt-dev\/posts\/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5\/%E4%BD%BF%E7%94%A8\/"
+    },"genre": "posts","keywords": "github项目配置","wordcount":  40 ,
+    "url": "https:\/\/yichixing.github.io\/hugo-Fixlt-dev\/posts\/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5\/%E4%BD%BF%E7%94%A8\/","datePublished": "2023-02-20T20:14:22+08:00","dateModified": "2023-02-20T20:14:22+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -113,11 +116,26 @@
   </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
 
   <article class="page single">
-    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>My First Post</span>
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>使用.gitignore的意义</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/hugo-Fixlt-dev/categories/blog/" class="post-category" title="Category - Blog"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Blog</a> and <a href="/hugo-Fixlt-dev/collections/blog/" class="post-collection" title="Collection - Blog"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> Blog</a></span></div><div class="post-meta-line"><span title="published on 2023-02-20 20:14:22"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-02-20">2023-02-20</time></span>&nbsp;<span title="147 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 200 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>One minute</span>&nbsp;</div>
-    </div><div class="content" id="content"><p>A blog (a truncation of &ldquo;weblog&rdquo;) is an informational website published on the World Wide Web consisting of discrete, often informal diary-style text entries (posts). Posts are typically displayed in reverse chronological order so that the most recent post appears first, at the top of the web page. Until 2009, blogs were usually the work of a single individual,[citation needed] occasionally of a small group, and often covered a single subject or topic. In the 2010s, &ldquo;multi-author blogs&rdquo; (MABs) emerged, featuring the writing of multiple authors and sometimes professionally edited. MABs from newspapers, other media outlets, universities, think tanks, advocacy groups, and similar institutions account for an increasing quantity of blog traffic. The rise of Twitter and other &ldquo;microblogging&rdquo; systems helps integrate MABs and single-author blogs into the news media. Blog can also be used as a verb, meaning to maintain or add content to a blog.</p>
+      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/hugo-Fixlt-dev/categories/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/" class="post-category" title="Category - Github重要认知"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Github重要认知</a> and <a href="/hugo-Fixlt-dev/collections/blog/" class="post-collection" title="Collection - Blog"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> Blog</a></span></div><div class="post-meta-line"><span title="published on 2023-02-20 20:14:22"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-02-20">2023-02-20</time></span>&nbsp;<span title="40 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 100 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>One minute</span>&nbsp;</div>
+    </div><div class="content" id="content"><p>(01:24-02:04) <em><strong>2.4: 配置 .gitignore 忽略生成文件</strong></em></p>
+<ul>
+<li><strong>说明</strong>：<strong>Hugo</strong> 项目中的某些文件/目录是<strong>自动生成的</strong>，<strong>不应该</strong>提交到源代码仓库，包括：
+<ul>
+<li><code>public/</code>：<strong>Hugo</strong> 生成的静态网站文件目录。</li>
+<li><code>resources/</code>：<strong>Hugo</strong> 处理后的资源缓存目录。</li>
+<li><code>hugo.build.lock</code>：构建锁文件。</li>
+<li><code>hugo.exe</code>：（如果在 Windows 下）<strong>Hugo</strong> 可执行文件本身。</li>
+</ul>
+</li>
+<li>♈ <strong>操作</strong>：在本地 Hugo 项目根目录下，<strong>创建</strong>一个名为 <code>.gitignore</code> 的文件。</li>
+<li>♈<strong>操作</strong>：编辑 <code>.gitignore</code> 文件，将上述需要忽略的文件名或目录名（如 <code>public</code>, <code>resources</code>, <code>hugo.build.lock</code>, <code>hugo.exe</code>）添加进去，每行一个。</li>
+<li>♈<strong>目的</strong>：<strong>保证</strong>上传到 <strong>GitHub</strong> 的是<strong>最干净、最原始</strong>的 Hugo 项目文件。
+《♓目的就是不要让静态资源污染源码，因为hugo-main是源代码仓库，源代码仓库不负责展示github page，只负责运行action得到静态资源给其它部署仓库hugo-dev，所以没必要把多余的静态资源上传到hugo-main，反正在hugo-main展示这些静态资源》
+&lt;git add .：添加所有文件到暂存区（♎.gitignore 会生效，忽略指定文件）。&gt;</li>
+</ul>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
@@ -126,21 +144,21 @@
       </div><div class="post-info-license">
             <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
           </div></div><div class="post-info-line">
-        <div class="post-info-md"><span><a href="/hugo-Fixlt-dev/posts/first_post/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
+        <div class="post-info-md"><span><a href="/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/%E4%BD%BF%E7%94%A8/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://yichixing.github.io/hugo-Fixlt-dev/posts/first_post/" data-title="My First Post" data-hashtags="blog"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://yichixing.github.io/hugo-Fixlt-dev/posts/first_post/" data-hashtag="blog"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://yichixing.github.io/hugo-Fixlt-dev/posts/first_post/" data-title="My First Post"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/%E4%BD%BF%E7%94%A8/" data-title="使用.gitignore的意义" data-hashtags="github项目配置"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/%E4%BD%BF%E7%94%A8/" data-hashtag="github项目配置"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/%E4%BD%BF%E7%94%A8/" data-title="使用.gitignore的意义"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/hugo-Fixlt-dev/tags/blog/" class="post-tag" title="Tags - Blog">Blog</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/hugo-Fixlt-dev/tags/github%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/" class="post-tag" title="Tags - Github项目配置">Github项目配置</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/hugo-Fixlt-dev/">Home</a></span>
     </section>
-  </div><div class="post-nav"><a href="/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/%E4%BD%BF%E7%94%A8/" class="post-nav-item" rel="prev" title="使用.gitignore的意义"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>使用.gitignore的意义</a><a href="/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionai%E7%BC%96%E5%86%99action%E7%A8%8B%E5%BA%8F%E6%8A%80%E5%B7%A7/" class="post-nav-item" rel="next" title="Github Action：3 AI编写action程序技巧">Github Action：3 AI编写action程序技巧<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  </div><div class="post-nav"><a href="/hugo-Fixlt-dev/posts/first_post/" class="post-nav-item" rel="next" title="My First Post">My First Post<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article>
 
