@@ -17,5 +17,5 @@
 ---
 
 > Author:   
-> URL: https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github%E9%85%8D%E7%BD%AE-github-pull-%E4%B8%8E-github-pushpull%E5%AF%B9%E5%88%86%E6%94%AF%E5%90%8E%E6%89%8D%E8%83%BD%E7%94%A8push/  
+> URL: env.HUGO_BASEURL/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github%E9%85%8D%E7%BD%AE-github-pull-%E4%B8%8E-github-pushpull%E5%AF%B9%E5%88%86%E6%94%AF%E5%90%8E%E6%89%8D%E8%83%BD%E7%94%A8push/  
 

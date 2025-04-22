@@ -13,5 +13,5 @@
 ---
 
 > Author:   
-> URL: https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-action%E7%94%A8github-action%E6%8A%8A%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0github-page%E4%BB%93%E5%BA%93%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89/  
+> URL: env.HUGO_BASEURL/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-action%E7%94%A8github-action%E6%8A%8A%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0github-page%E4%BB%93%E5%BA%93%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89/  
 
