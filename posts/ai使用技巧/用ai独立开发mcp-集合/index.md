@@ -16,5 +16,5 @@
 ---
 
 > Author:   
-> URL: env.HUGO_BASEURL/posts/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/%E7%94%A8ai%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91mcp-%E9%9B%86%E5%90%88/  
+> URL: https://hugo-fixlt-dev.tcapital.top/posts/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/%E7%94%A8ai%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91mcp-%E9%9B%86%E5%90%88/  
 
