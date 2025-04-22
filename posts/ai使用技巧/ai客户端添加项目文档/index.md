@@ -14,5 +14,5 @@
 ---
 
 > Author:   
-> URL: http://localhost:1313/hugo-Fixlt-dev/posts/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/ai%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%B7%BB%E5%8A%A0%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/  
+> URL: https://yichixing.github.io/hugo-Fixlt-dev/posts/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/ai%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%B7%BB%E5%8A%A0%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/  
 
