@@ -1,4 +1,4 @@
-# 使用.gitignore的意义
+# Github配置：1 使用.gitignore的意义
 
 
 (01:24-02:04) ***2.4: 配置 .gitignore 忽略生成文件***
@@ -16,5 +16,5 @@
 ---
 
 > Author:   
-> URL: https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/%E4%BD%BF%E7%94%A8/  
+> URL: https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/  
 

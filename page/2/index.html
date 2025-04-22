@@ -111,14 +111,15 @@
     <a href="/hugo-Fixlt-dev/posts/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/%E7%94%A8ai%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91mcp-%E9%9B%86%E5%90%88/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/hugo-Fixlt-dev/tags/%E7%94%A8ai%E7%BC%96%E7%A8%8B%E7%8B%AC%E7%AB%8B%E5%BC%80mcp%E6%9C%8D%E5%8A%A1/' class="post-tag">用AI编程独立开MCP服务</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionaction%E9%83%A8%E7%BD%B2hugo%E9%A1%B9%E7%9B%AE%E7%9A%84aciton%E7%A8%8B%E5%BA%8F-%E6%9C%80%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/">Github Action：0 Action部署hugo项目的aciton程序 最基本原理</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span>&nbsp;<span class="post-publish" title='2023-02-20 20:14:22'>published on <time datetime="2023-02-20">2023-02-20</time></span><span class="post-included-in">&nbsp;included in <a href="/hugo-Fixlt-dev/categories/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/" class="post-category" title="Category - Github重要认知"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Github重要认知</a> and <a href="/hugo-Fixlt-dev/collections/blog/" class="post-collection" title="Collection - Blog"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> Blog</a></span></div><div class="content"><pre><code>	[[[[在action环境安装项目包（hugo包）的两种做法（参考如何让AI写action程序）]
-		《1 uses 关键字并指定一个像 别大大佬些好的aciton 比如peaceiris/actions-hugo@v3 这样的“动作 (Action)”时，你是在委托这个预先打包好的工具去完成安装和配置 Hugo 的任务》
-		《2 直接用run字段亲自告诉那个临时的 Linux 系统具体怎么做才能把 Hugo 装好》
-
-	[action部署hugo项目的aciton程序]
+      Anonymous</span></span>&nbsp;<span class="post-publish" title='2023-02-20 20:14:22'>published on <time datetime="2023-02-20">2023-02-20</time></span><span class="post-included-in">&nbsp;included in <a href="/hugo-Fixlt-dev/categories/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/" class="post-category" title="Category - Github重要认知"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Github重要认知</a> and <a href="/hugo-Fixlt-dev/collections/blog/" class="post-collection" title="Collection - Blog"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> Blog</a></span></div><div class="content"><pre><code>	[action部署hugo项目的aciton程序]
 		&lt;action部署hugo项目的aciton程序的核心：让action使用hugo命令，action环境需要hugo命令执行hugo博客&gt;
 		&lt;1 有参考作用的使用uses参数的action程序的写法（参考如何让AI写action程序）&gt;
 		&lt;2 有参考作用的使用run字段的action程序的写法 https://aistudio.google.com/prompts/1dv1SBgRsYgFBSgYe1Dseg0dyYouTZ3_P（参考如何让AI写action程序）&gt;
+
+	[[[[在action环境安装项目包（hugo包）的两种做法（参考如何让AI写action程序）]
+		《1 uses 关键字并指定一个像 别大大佬些好的aciton 比如peaceiris/actions-hugo@v3 这样的“动作 (Action)”时，你是在委托这个预先打包好的工具去完成安装和配置 Hugo 的任务》
+		《2 直接用run字段亲自告诉那个临时的 Linux 系统具体怎么做才能把 Hugo 装好》
+
 
 	[aciton想部署hugo的核心就是用别人预先写好的东西]
 		《hugo官方有提供官方action动作把仓库代码下载（检出） 到当前的虚拟运行环境中，它就是actions/checkout@v4，通过uses: actions/checkout@v4: 就能使用一个预先写好的、官方提供的“动作” (Action)》
@@ -160,8 +161,9 @@
     <a href="/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-action%E7%94%A8github-action%E6%8A%8A%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0github-page%E4%BB%93%E5%BA%93%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/hugo-Fixlt-dev/tags/github-action%E7%9A%84%E4%BD%9C%E7%94%A8/' class="post-tag">Github Action的作用</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionai%E7%BC%96%E5%86%99action%E7%A8%8B%E5%BA%8F%E6%8A%80%E5%B7%A7/">Github Action：3 AI编写action程序技巧</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span>&nbsp;<span class="post-publish" title='2023-02-20 20:14:22'>published on <time datetime="2023-02-20">2023-02-20</time></span><span class="post-included-in">&nbsp;included in <a href="/hugo-Fixlt-dev/categories/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/" class="post-category" title="Category - Github重要认知"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Github重要认知</a> and <a href="/hugo-Fixlt-dev/collections/blog/" class="post-collection" title="Collection - Blog"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> Blog</a></span></div><div class="content"><p>github aciton配置文件如何创建
-(2 action配置文件用aciton模板的配置文件， action模板配置文件扔给AI，说明需要这个action模板运行哪个脚本，让AI修改即可，因为有些时候 AI直接生成的action配置文件aciton根本运行不了)</p></div><div class="post-footer">
+      Anonymous</span></span>&nbsp;<span class="post-publish" title='2023-02-20 20:14:22'>published on <time datetime="2023-02-20">2023-02-20</time></span><span class="post-included-in">&nbsp;included in <a href="/hugo-Fixlt-dev/categories/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/" class="post-category" title="Category - Github重要认知"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Github重要认知</a> and <a href="/hugo-Fixlt-dev/collections/blog/" class="post-collection" title="Collection - Blog"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> Blog</a></span></div><div class="content"><p>github aciton配置文件如何创建</p>
+<pre><code>	(2 action配置文件用aciton模板的配置文件， action模板配置文件扔给AI，说明需要这个action模板运行哪个脚本，让AI修改即可，因为有些时候 AI直接生成的action配置文件aciton根本运行不了)
+</code></pre></div><div class="post-footer">
     <a href="/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionai%E7%BC%96%E5%86%99action%E7%A8%8B%E5%BA%8F%E6%8A%80%E5%B7%A7/">Read More</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/hugo-Fixlt-dev/tags/github-action%E7%9A%84%E4%BD%9C%E7%94%A8/' class="post-tag">Github Action的作用</a></div></div>
 </article><ul class="pagination"><li class="page-item">
           <span class="page-link">
