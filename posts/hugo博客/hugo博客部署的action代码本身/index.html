@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Hugo博客action代码部署：hugo博客的action代码本体 - 笔记博客</title><meta name="author" content="">
+<meta name="description" content=" 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 # 工作流名称 name: deploy # 触发工作流的事件 on: push: branches: # 仅在 main 分支被推送时触发 - main # 定义工作流中的作业 jobs: # 定义一个名为 deploy 的作业 deploy: # 指定作业运行的环境为最新的 Ubuntu 系统 runs-on: ubuntu-latest # 定义作业中的步骤 steps: # 步骤1：检出代码 - name: Checkout # 使用官方的 actions/checkout 动作来获取仓库代码 uses: actions/checkout@v4 with: # 获取完整的 Git 历史记录（对于部署工具 peaceiris/actions-gh-pages 可能需要） # 0 表示获取所有历史，而不是默认的浅克隆（只获取最后一次提交） fetch-depth: 0 # 步骤2：设置 Hugo 环境 - name: Setup Hugo # 使用社区维护的 peaceiris/actions-hugo 动作来安装 Hugo uses: peaceiris/actions-hugo@v3 with: # 指定要安装的 Hugo 版本为最新版 hugo-version: &#39;latest&#39; # 明确指定安装 Hugo 的 Extended 版本（支持 SASS/SCSS 等特性） extended: true # 步骤3：构建网站 - name: Build Web # 运行 Hugo 命令来生成静态网站文件 # -D 参数表示包含草稿内容（如果本地预览用过，这里保持一致，或按需移除） run: hugo -D # 步骤4：部署网站到 GitHub Pages - name: Deploy Web # 使用社区维护的 peaceiris/actions-gh-pages 动作来部署 uses: peaceiris/actions-gh-pages@v4 with: # 指定用于认证的 Personal Access Token (PAT) # ${{ secrets.TOKEN }} 会从仓库的 Secrets 中读取名为 TOKEN 的值 # （视频中占位符是 你的token变量名，这里假设你设置为 TOKEN） PERSONAL_TOKEN: ${{ secrets.TOKEN }} # 指定要将静态文件部署到的目标仓库 # 格式为：你的GitHub用户名/目标仓库名 # （视频中占位符是 你的github名/你的仓库名，这里假设目标仓库是 letere-gz/hugo-dev） EXTERNAL_REPOSITORY: letere-gz/hugo-dev # 指定将静态文件推送到目标仓库的哪个分支（通常是 gh-pages 或 main） PUBLISH_BRANCH: main # 指定包含构建好的静态网站文件的目录（Hugo 默认生成到 public） PUBLISH_DIR: ./public # 自定义部署时 Git 提交的信息 commit_message: auto deploy "><meta name="keywords" content='项目部署'>
+  <meta itemprop="name" content="hugo博客action代码部署：hugo博客的action代码本体">
+  <meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 # 工作流名称 name: deploy # 触发工作流的事件 on: push: branches: # 仅在 main 分支被推送时触发 - main # 定义工作流中的作业 jobs: # 定义一个名为 deploy 的作业 deploy: # 指定作业运行的环境为最新的 Ubuntu 系统 runs-on: ubuntu-latest # 定义作业中的步骤 steps: # 步骤1：检出代码 - name: Checkout # 使用官方的 actions/checkout 动作来获取仓库代码 uses: actions/checkout@v4 with: # 获取完整的 Git 历史记录（对于部署工具 peaceiris/actions-gh-pages 可能需要） # 0 表示获取所有历史，而不是默认的浅克隆（只获取最后一次提交） fetch-depth: 0 # 步骤2：设置 Hugo 环境 - name: Setup Hugo # 使用社区维护的 peaceiris/actions-hugo 动作来安装 Hugo uses: peaceiris/actions-hugo@v3 with: # 指定要安装的 Hugo 版本为最新版 hugo-version: &#39;latest&#39; # 明确指定安装 Hugo 的 Extended 版本（支持 SASS/SCSS 等特性） extended: true # 步骤3：构建网站 - name: Build Web # 运行 Hugo 命令来生成静态网站文件 # -D 参数表示包含草稿内容（如果本地预览用过，这里保持一致，或按需移除） run: hugo -D # 步骤4：部署网站到 GitHub Pages - name: Deploy Web # 使用社区维护的 peaceiris/actions-gh-pages 动作来部署 uses: peaceiris/actions-gh-pages@v4 with: # 指定用于认证的 Personal Access Token (PAT) # ${{ secrets.TOKEN }} 会从仓库的 Secrets 中读取名为 TOKEN 的值 # （视频中占位符是 你的token变量名，这里假设你设置为 TOKEN） PERSONAL_TOKEN: ${{ secrets.TOKEN }} # 指定要将静态文件部署到的目标仓库 # 格式为：你的GitHub用户名/目标仓库名 # （视频中占位符是 你的github名/你的仓库名，这里假设目标仓库是 letere-gz/hugo-dev） EXTERNAL_REPOSITORY: letere-gz/hugo-dev # 指定将静态文件推送到目标仓库的哪个分支（通常是 gh-pages 或 main） PUBLISH_BRANCH: main # 指定包含构建好的静态网站文件的目录（Hugo 默认生成到 public） PUBLISH_DIR: ./public # 自定义部署时 Git 提交的信息 commit_message: auto deploy">
+  <meta itemprop="datePublished" content="2025-02-20T20:14:22+08:00">
+  <meta itemprop="dateModified" content="2025-02-20T20:14:22+08:00">
+  <meta itemprop="wordCount" content="233">
+  <meta itemprop="keywords" content="项目部署"><meta property="og:url" content="https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/hugo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84action%E4%BB%A3%E7%A0%81%E6%9C%AC%E8%BA%AB/">
+  <meta property="og:site_name" content="笔记博客">
+  <meta property="og:title" content="hugo博客action代码部署：hugo博客的action代码本体">
+  <meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 # 工作流名称 name: deploy # 触发工作流的事件 on: push: branches: # 仅在 main 分支被推送时触发 - main # 定义工作流中的作业 jobs: # 定义一个名为 deploy 的作业 deploy: # 指定作业运行的环境为最新的 Ubuntu 系统 runs-on: ubuntu-latest # 定义作业中的步骤 steps: # 步骤1：检出代码 - name: Checkout # 使用官方的 actions/checkout 动作来获取仓库代码 uses: actions/checkout@v4 with: # 获取完整的 Git 历史记录（对于部署工具 peaceiris/actions-gh-pages 可能需要） # 0 表示获取所有历史，而不是默认的浅克隆（只获取最后一次提交） fetch-depth: 0 # 步骤2：设置 Hugo 环境 - name: Setup Hugo # 使用社区维护的 peaceiris/actions-hugo 动作来安装 Hugo uses: peaceiris/actions-hugo@v3 with: # 指定要安装的 Hugo 版本为最新版 hugo-version: &#39;latest&#39; # 明确指定安装 Hugo 的 Extended 版本（支持 SASS/SCSS 等特性） extended: true # 步骤3：构建网站 - name: Build Web # 运行 Hugo 命令来生成静态网站文件 # -D 参数表示包含草稿内容（如果本地预览用过，这里保持一致，或按需移除） run: hugo -D # 步骤4：部署网站到 GitHub Pages - name: Deploy Web # 使用社区维护的 peaceiris/actions-gh-pages 动作来部署 uses: peaceiris/actions-gh-pages@v4 with: # 指定用于认证的 Personal Access Token (PAT) # ${{ secrets.TOKEN }} 会从仓库的 Secrets 中读取名为 TOKEN 的值 # （视频中占位符是 你的token变量名，这里假设你设置为 TOKEN） PERSONAL_TOKEN: ${{ secrets.TOKEN }} # 指定要将静态文件部署到的目标仓库 # 格式为：你的GitHub用户名/目标仓库名 # （视频中占位符是 你的github名/你的仓库名，这里假设目标仓库是 letere-gz/hugo-dev） EXTERNAL_REPOSITORY: letere-gz/hugo-dev # 指定将静态文件推送到目标仓库的哪个分支（通常是 gh-pages 或 main） PUBLISH_BRANCH: main # 指定包含构建好的静态网站文件的目录（Hugo 默认生成到 public） PUBLISH_DIR: ./public # 自定义部署时 Git 提交的信息 commit_message: auto deploy">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-20T20:14:22+08:00">
+    <meta property="article:modified_time" content="2025-02-20T20:14:22+08:00">
+    <meta property="article:tag" content="项目部署">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="hugo博客action代码部署：hugo博客的action代码本体">
+  <meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 # 工作流名称 name: deploy # 触发工作流的事件 on: push: branches: # 仅在 main 分支被推送时触发 - main # 定义工作流中的作业 jobs: # 定义一个名为 deploy 的作业 deploy: # 指定作业运行的环境为最新的 Ubuntu 系统 runs-on: ubuntu-latest # 定义作业中的步骤 steps: # 步骤1：检出代码 - name: Checkout # 使用官方的 actions/checkout 动作来获取仓库代码 uses: actions/checkout@v4 with: # 获取完整的 Git 历史记录（对于部署工具 peaceiris/actions-gh-pages 可能需要） # 0 表示获取所有历史，而不是默认的浅克隆（只获取最后一次提交） fetch-depth: 0 # 步骤2：设置 Hugo 环境 - name: Setup Hugo # 使用社区维护的 peaceiris/actions-hugo 动作来安装 Hugo uses: peaceiris/actions-hugo@v3 with: # 指定要安装的 Hugo 版本为最新版 hugo-version: &#39;latest&#39; # 明确指定安装 Hugo 的 Extended 版本（支持 SASS/SCSS 等特性） extended: true # 步骤3：构建网站 - name: Build Web # 运行 Hugo 命令来生成静态网站文件 # -D 参数表示包含草稿内容（如果本地预览用过，这里保持一致，或按需移除） run: hugo -D # 步骤4：部署网站到 GitHub Pages - name: Deploy Web # 使用社区维护的 peaceiris/actions-gh-pages 动作来部署 uses: peaceiris/actions-gh-pages@v4 with: # 指定用于认证的 Personal Access Token (PAT) # ${{ secrets.TOKEN }} 会从仓库的 Secrets 中读取名为 TOKEN 的值 # （视频中占位符是 你的token变量名，这里假设你设置为 TOKEN） PERSONAL_TOKEN: ${{ secrets.TOKEN }} # 指定要将静态文件部署到的目标仓库 # 格式为：你的GitHub用户名/目标仓库名 # （视频中占位符是 你的github名/你的仓库名，这里假设目标仓库是 letere-gz/hugo-dev） EXTERNAL_REPOSITORY: letere-gz/hugo-dev # 指定将静态文件推送到目标仓库的哪个分支（通常是 gh-pages 或 main） PUBLISH_BRANCH: main # 指定包含构建好的静态网站文件的目录（Hugo 默认生成到 public） PUBLISH_DIR: ./public # 自定义部署时 Git 提交的信息 commit_message: auto deploy">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/hugo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84action%E4%BB%A3%E7%A0%81%E6%9C%AC%E8%BA%AB/" title="hugo博客action代码部署：hugo博客的action代码本体 - 笔记博客" /><link rel="prev" type="text/html" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8github-action%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2hugo%E5%8D%9A%E5%AE%A2%E5%88%B0page%E4%BB%93%E5%BA%93/" title="使用github-action自动部署hugo博客到“page”仓库" /><link rel="next" type="text/html" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/action-%E4%BB%A3%E7%A0%81%E6%88%91%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%8D%E6%9D%A5%E7%9A%84%E4%B8%8D%E7%94%A8ai%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E9%9C%80%E8%A6%81steps%E5%AD%97%E6%AE%B5%E4%B8%8B%E7%9A%84users%E5%8F%82%E6%95%B0/" title="hugo博客action代码部署：action代码解析" /><link rel="alternate" type="text/markdown" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/hugo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84action%E4%BB%A3%E7%A0%81%E6%9C%AC%E8%BA%AB/index.md" title="hugo博客action代码部署：hugo博客的action代码本体 - 笔记博客"><link rel="stylesheet" href="/hugo-Fixlt-dev/css/style.min.css"><link rel="preload" href="/hugo-Fixlt-dev/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/hugo-Fixlt-dev/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/hugo-Fixlt-dev/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/hugo-Fixlt-dev/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "hugo博客action代码部署：hugo博客的action代码本体",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/yichixing.github.io\/hugo-Fixlt-dev\/posts\/hugo%E5%8D%9A%E5%AE%A2\/hugo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84action%E4%BB%A3%E7%A0%81%E6%9C%AC%E8%BA%AB\/"
+    },"genre": "posts","keywords": "项目部署","wordcount":  233 ,
+    "url": "https:\/\/yichixing.github.io\/hugo-Fixlt-dev\/posts\/hugo%E5%8D%9A%E5%AE%A2\/hugo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84action%E4%BB%A3%E7%A0%81%E6%9C%AC%E8%BA%AB\/","datePublished": "2025-02-20T20:14:22+08:00","dateModified": "2025-02-20T20:14:22+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Author"
+      },"description": ""
+  }
+  </script><script src="/hugo-Fixlt-dev/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/hugo-Fixlt-dev/" title="笔记博客"><span class="header-title-text">笔记博客</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/hugo-Fixlt-dev/archives/"><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item">
+              <a class="menu-link" href="/hugo-Fixlt-dev/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a class="menu-link" href="/hugo-Fixlt-dev/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/hugo-Fixlt-dev/" title="笔记博客"><span class="header-title-text">笔记博客</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/hugo-Fixlt-dev/archives/"><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item"><a class="menu-link" href="/hugo-Fixlt-dev/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item"><a class="menu-link" href="/hugo-Fixlt-dev/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Hugo博客action代码部署：hugo博客的action代码本体</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/hugo-Fixlt-dev/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" class="post-category" title="Category - 项目部署"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 项目部署</a> and <a href="/hugo-Fixlt-dev/collections/hugo%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE/" class="post-collection" title="Collection - Hugo博客项目"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> Hugo博客项目</a></span></div><div class="post-meta-line"><span title="published on 2025-02-20 20:14:22"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-02-20">2025-02-20</time></span>&nbsp;<span title="233 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 300 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>2 minutes</span>&nbsp;</div>
+    </div><div class="content" id="content"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># 工作流名称</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">deploy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># 触发工作流的事件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># 仅在 main 分支被推送时触发</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># 定义工作流中的作业</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># 定义一个名为 deploy 的作业</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">deploy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># 指定作业运行的环境为最新的 Ubuntu 系统</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># 定义作业中的步骤</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># 步骤1：检出代码</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Checkout</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 使用官方的 actions/checkout 动作来获取仓库代码</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># 获取完整的 Git 历史记录（对于部署工具 peaceiris/actions-gh-pages 可能需要）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># 0 表示获取所有历史，而不是默认的浅克隆（只获取最后一次提交）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># 步骤2：设置 Hugo 环境</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Setup Hugo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 使用社区维护的 peaceiris/actions-hugo 动作来安装 Hugo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-hugo@v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># 指定要安装的 Hugo 版本为最新版</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">hugo-version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;latest&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># 明确指定安装 Hugo 的 Extended 版本（支持 SASS/SCSS 等特性）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">extended</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># 步骤3：构建网站</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Build Web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 运行 Hugo 命令来生成静态网站文件</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># -D 参数表示包含草稿内容（如果本地预览用过，这里保持一致，或按需移除）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">hugo -D</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># 步骤4：部署网站到 GitHub Pages</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Deploy Web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 使用社区维护的 peaceiris/actions-gh-pages 动作来部署</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-gh-pages@v4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># 指定用于认证的 Personal Access Token (PAT)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># ${{ secrets.TOKEN }} 会从仓库的 Secrets 中读取名为 TOKEN 的值</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># （视频中占位符是 你的token变量名，这里假设你设置为 TOKEN）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">PERSONAL_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.TOKEN }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># 指定要将静态文件部署到的目标仓库</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># 格式为：你的GitHub用户名/目标仓库名</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># （视频中占位符是 你的github名/你的仓库名，这里假设目标仓库是 letere-gz/hugo-dev）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">EXTERNAL_REPOSITORY</span><span class="p">:</span><span class="w"> </span><span class="l">letere-gz/hugo-dev</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># 指定将静态文件推送到目标仓库的哪个分支（通常是 gh-pages 或 main）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">PUBLISH_BRANCH</span><span class="p">:</span><span class="w"> </span><span class="l">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># 指定包含构建好的静态网站文件的目录（Hugo 默认生成到 public）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">PUBLISH_DIR</span><span class="p">:</span><span class="w"> </span><span class="l">./public</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># 自定义部署时 Git 提交的信息</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">commit_message</span><span class="p">:</span><span class="w"> </span><span class="l">auto deploy</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2025-02-20 20:14:22">Updated on 2025-02-20&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/hugo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84action%E4%BB%A3%E7%A0%81%E6%9C%AC%E8%BA%AB/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/hugo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84action%E4%BB%A3%E7%A0%81%E6%9C%AC%E8%BA%AB/" data-title="Hugo博客action代码部署：hugo博客的action代码本体" data-hashtags="项目部署"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/hugo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84action%E4%BB%A3%E7%A0%81%E6%9C%AC%E8%BA%AB/" data-hashtag="项目部署"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/hugo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84action%E4%BB%A3%E7%A0%81%E6%9C%AC%E8%BA%AB/" data-title="Hugo博客action代码部署：hugo博客的action代码本体"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/hugo-Fixlt-dev/tags/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" class="post-tag" title="Tags - 项目部署">项目部署</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/hugo-Fixlt-dev/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8github-action%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2hugo%E5%8D%9A%E5%AE%A2%E5%88%B0page%E4%BB%93%E5%BA%93/" class="post-nav-item" rel="prev" title="使用github-Action自动部署hugo博客到“page”仓库"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>使用github-Action自动部署hugo博客到“page”仓库</a><a href="/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/action-%E4%BB%A3%E7%A0%81%E6%88%91%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%8D%E6%9D%A5%E7%9A%84%E4%B8%8D%E7%94%A8ai%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E9%9C%80%E8%A6%81steps%E5%AD%97%E6%AE%B5%E4%B8%8B%E7%9A%84users%E5%8F%82%E6%95%B0/" class="post-nav-item" rel="next" title="Hugo博客action代码部署：action代码解析">Hugo博客action代码部署：action代码解析<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.146.6"><img class="hugo-icon" src="/hugo-Fixlt-dev/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.18"><img class="fixit-icon" src="/hugo-Fixlt-dev/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="/hugo-Fixlt-dev/"></a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="preload" href="/hugo-Fixlt-dev/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/hugo-Fixlt-dev/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/hugo-Fixlt-dev/lib/cookieconsent/cookieconsent.min.css"><script src="/hugo-Fixlt-dev/lib/autocomplete/autocomplete.min.js" defer></script><script src="/hugo-Fixlt-dev/lib/fuse/fuse.min.js" defer></script><script src="/hugo-Fixlt-dev/lib/sharer/sharer.min.js" async defer></script><script src="/hugo-Fixlt-dev/lib/katex/katex.min.js" defer></script><script src="/hugo-Fixlt-dev/lib/katex/auto-render.min.js" defer></script><script src="/hugo-Fixlt-dev/lib/katex/copy-tex.min.js" defer></script><script src="/hugo-Fixlt-dev/lib/katex/mhchem.min.js" defer></script><script src="/hugo-Fixlt-dev/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/hugo-Fixlt-dev/search.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"version":"v0.3.18"};</script><script src="/hugo-Fixlt-dev/js/theme.min.js" defer></script></body>
+</html>
