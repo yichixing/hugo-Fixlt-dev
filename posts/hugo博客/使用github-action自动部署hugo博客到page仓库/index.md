@@ -173,5 +173,5 @@
 ---
 
 > Author:   
-> URL: /posts/hugo%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8github-action%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2hugo%E5%8D%9A%E5%AE%A2%E5%88%B0page%E4%BB%93%E5%BA%93/  
+> URL: https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8github-action%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2hugo%E5%8D%9A%E5%AE%A2%E5%88%B0page%E4%BB%93%E5%BA%93/  
 

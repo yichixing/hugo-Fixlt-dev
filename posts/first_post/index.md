@@ -7,5 +7,5 @@ A blog (a truncation of "weblog") is an informational website published on the W
 ---
 
 > Author:   
-> URL: /posts/first_post/  
+> URL: https://yichixing.github.io/hugo-Fixlt-dev/posts/first_post/  
 

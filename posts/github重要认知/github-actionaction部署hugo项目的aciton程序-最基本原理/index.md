@@ -20,5 +20,5 @@
 ---
 
 > Author:   
-> URL: /posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionaction%E9%83%A8%E7%BD%B2hugo%E9%A1%B9%E7%9B%AE%E7%9A%84aciton%E7%A8%8B%E5%BA%8F-%E6%9C%80%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/  
+> URL: https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionaction%E9%83%A8%E7%BD%B2hugo%E9%A1%B9%E7%9B%AE%E7%9A%84aciton%E7%A8%8B%E5%BA%8F-%E6%9C%80%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/  
 

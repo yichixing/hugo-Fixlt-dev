@@ -9,5 +9,5 @@ github aciton配置文件如何创建
 ---
 
 > Author:   
-> URL: /posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionai%E7%BC%96%E5%86%99action%E7%A8%8B%E5%BA%8F%E6%8A%80%E5%B7%A7/  
+> URL: https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionai%E7%BC%96%E5%86%99action%E7%A8%8B%E5%BA%8F%E6%8A%80%E5%B7%A7/  
 
