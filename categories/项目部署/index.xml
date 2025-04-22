@@ -17,6 +17,14 @@
       <description>&lt;p&gt;[让AI解析github项目]&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;《1 直接把项目克隆下来，然后用AI客户端打开即可，反正项目说明README.md是markdown，图片什么的都有，再复杂的项目AI都能用README.md解析》&#xD;&#xA;&#xD;&#xA;&amp;lt;2 使用github MCP解析自己克隆下来的仓库&amp;gt;&#xD;&#xA;&#xD;&#xA;&amp;lt;3 给AI客户端添加URL文档集 直接把github项目地址作为文档集数据&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;</description>
     </item>
     <item>
+      <title>AI客户端添加项目文档</title>
+      <link>http://localhost:1313/hugo-Fixlt-dev/posts/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/ai%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%B7%BB%E5%8A%A0%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/</link>
+      <pubDate>Thu, 20 Feb 2025 20:14:22 +0800</pubDate>
+      <guid>http://localhost:1313/hugo-Fixlt-dev/posts/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/ai%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%B7%BB%E5%8A%A0%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/</guid>
+      <category domain="http://localhost:1313/hugo-Fixlt-dev/categories/ai%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%B9%81%E5%A4%9A-%E8%BF%99%E9%87%8C%E5%AE%B9%E6%98%93%E6%B2%A1%E6%B3%A8%E6%84%8F%E5%88%B0-%E6%89%80%E4%BB%A5%E5%9C%A8%E8%BF%99%E9%87%8C%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B/">AI编程（笔记繁多 这里容易没注意到 所以在这里记录一下）</category>
+      <description>&lt;p&gt;[让AI解析github项目]&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;&amp;lt;1 给AI客户端添加URL文档集 直接把项目文档的地址作为文档集数据》&#xD;&#xA;&#xD;&#xA;&amp;lt;2 把在线项目文档的网页crlt+s保存下来后加入到当前项目&amp;gt;&#xD;&#xA;&#xD;&#xA;&amp;lt;3 使用联网 MCP服务 然后AI客户端联网去解析在线项目文档&amp;gt;&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;</description>
+    </item>
+    <item>
       <title>hgithub page部署hugo博客</title>
       <link>http://localhost:1313/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/github-page%E9%83%A8%E7%BD%B2hugo%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Thu, 20 Feb 2025 20:14:22 +0800</pubDate>
