@@ -7,5 +7,5 @@ A blog (a truncation of "weblog") is an informational website published on the W
 ---
 
 > Author:   
-> URL: https://hugo-fixlt-dev.tcapital.top/posts/first_post/  
+> URL: env.HUGO_BASEURL/posts/first_post/  
 

@@ -16,5 +16,5 @@
 ---
 
 > Author:   
-> URL: https://hugo-fixlt-dev.tcapital.top/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/  
+> URL: env.HUGO_BASEURL/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/  
 
