@@ -72,5 +72,5 @@ jobs:
 ---
 
 > Author:   
-> URL: env.HUGO_BASEURL/posts/hugo%E5%8D%9A%E5%AE%A2/hugo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84action%E4%BB%A3%E7%A0%81%E6%9C%AC%E8%BA%AB/  
+> URL: https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/hugo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84action%E4%BB%A3%E7%A0%81%E6%9C%AC%E8%BA%AB/  
 

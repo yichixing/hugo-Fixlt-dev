@@ -12,5 +12,5 @@
 ---
 
 > Author:   
-> URL: env.HUGO_BASEURL/posts/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/ai%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%A7%A3%E6%9E%90github%E9%A1%B9%E7%9B%AE/  
+> URL: https://yichixing.github.io/hugo-Fixlt-dev/posts/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/ai%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%A7%A3%E6%9E%90github%E9%A1%B9%E7%9B%AE/  
 

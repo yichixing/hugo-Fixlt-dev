@@ -16,5 +16,5 @@
 ---
 
 > Author:   
-> URL: env.HUGO_BASEURL/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/  
+> URL: https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8.gitignore%E7%9A%84%E6%84%8F%E4%B9%89/  
 
