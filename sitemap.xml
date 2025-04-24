@@ -1,138 +1,100 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/tags/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/ai%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%A7%A3%E6%9E%90github%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/ai%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%B7%BB%E5%8A%A0%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/categories/ai%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%B9%81%E5%A4%9A-%E8%BF%99%E9%87%8C%E5%AE%B9%E6%98%93%E6%B2%A1%E6%B3%A8%E6%84%8F%E5%88%B0-%E6%89%80%E4%BB%A5%E5%9C%A8%E8%BF%99%E9%87%8C%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/collections/blog/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/categories/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/collections/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/github-page%E9%83%A8%E7%BD%B2hugo%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/action-%E4%BB%A3%E7%A0%81%E6%88%91%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%8D%E6%9D%A5%E7%9A%84%E4%B8%8D%E7%94%A8ai%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E9%9C%80%E8%A6%81steps%E5%AD%97%E6%AE%B5%E4%B8%8B%E7%9A%84users%E5%8F%82%E6%95%B0/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/hugo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84action%E4%BB%A3%E7%A0%81%E6%9C%AC%E8%BA%AB/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/collections/hugo%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/tags/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8github-action%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2hugo%E5%8D%9A%E5%AE%A2%E5%88%B0page%E4%BB%93%E5%BA%93/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/hugo%E5%8D%9A%E5%AE%A2/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0hugo%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/collections/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/%E7%94%A8ai%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91mcp-%E9%9B%86%E5%90%88/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/tags/%E7%94%A8ai%E7%BC%96%E7%A8%8B%E7%8B%AC%E7%AB%8B%E5%BC%80mcp%E6%9C%8D%E5%8A%A1/</loc>
-    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yichixing.github.io/hugo-Fixlt-dev/</loc>
     <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/tags/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/ai/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/ai%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%A7%A3%E6%9E%90github%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/ai/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/ai%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%B7%BB%E5%8A%A0%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/categories/ai%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%B9%81%E5%A4%9A-%E8%BF%99%E9%87%8C%E5%AE%B9%E6%98%93%E6%B2%A1%E6%B3%A8%E6%84%8F%E5%88%B0-%E6%89%80%E4%BB%A5%E5%9C%A8%E8%BF%99%E9%87%8C%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/categories/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/%E9%A1%B9%E7%9B%AE/hugo%E5%8D%9A%E5%AE%A2/github-page%E9%83%A8%E7%BD%B2hugo%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/%E9%A1%B9%E7%9B%AE/hugo%E5%8D%9A%E5%AE%A2/action-%E4%BB%A3%E7%A0%81%E6%88%91%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%8D%E6%9D%A5%E7%9A%84%E4%B8%8D%E7%94%A8ai%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E9%9C%80%E8%A6%81steps%E5%AD%97%E6%AE%B5%E4%B8%8B%E7%9A%84users%E5%8F%82%E6%95%B0/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/%E9%A1%B9%E7%9B%AE/hugo%E5%8D%9A%E5%AE%A2/hugo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E7%9A%84action%E4%BB%A3%E7%A0%81%E6%9C%AC%E8%BA%AB/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/tags/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/%E9%A1%B9%E7%9B%AE/hugo%E5%8D%9A%E5%AE%A2/%E4%BD%BF%E7%94%A8github-action%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2hugo%E5%8D%9A%E5%AE%A2%E5%88%B0page%E4%BB%93%E5%BA%93/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/%E9%A1%B9%E7%9B%AE/hugo%E5%8D%9A%E5%AE%A2/%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0hugo%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/%E9%A1%B9%E7%9B%AE/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84baseurl/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%AA%E6%9C%89%E5%9C%A8%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E5%BB%BA%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/ai/ai%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/%E7%94%A8ai%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91mcp-%E9%9B%86%E5%90%88/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/tags/%E7%94%A8ai%E7%BC%96%E7%A8%8B%E7%8B%AC%E7%AB%8B%E5%BC%80mcp%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%8F%82%E6%95%B0baseurl/</loc>
+    <lastmod>2025-02-20T20:14:22+08:00</lastmod>
+  </url><url>
     <loc>https://yichixing.github.io/hugo-Fixlt-dev/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
+  </url><url>
     <loc>https://yichixing.github.io/hugo-Fixlt-dev/tags/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2025-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionaction%E9%83%A8%E7%BD%B2hugo%E9%A1%B9%E7%9B%AE%E7%9A%84aciton%E7%A8%8B%E5%BA%8F-%E6%9C%80%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/</loc>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/%E9%A1%B9%E7%9B%AE/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionaction%E9%83%A8%E7%BD%B2hugo%E9%A1%B9%E7%9B%AE%E7%9A%84aciton%E7%A8%8B%E5%BA%8F-%E6%9C%80%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2024-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
+  </url><url>
     <loc>https://yichixing.github.io/hugo-Fixlt-dev/tags/github-action%E7%9A%84%E4%BD%9C%E7%94%A8/</loc>
     <lastmod>2024-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
+  </url><url>
     <loc>https://yichixing.github.io/hugo-Fixlt-dev/categories/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/</loc>
     <lastmod>2024-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
+  </url><url>
     <loc>https://yichixing.github.io/hugo-Fixlt-dev/categories/blog/</loc>
     <lastmod>2023-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
+  </url><url>
     <loc>https://yichixing.github.io/hugo-Fixlt-dev/tags/blog/</loc>
     <lastmod>2023-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actiongithub-action%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%8E%9F%E7%90%86github-action%E6%98%AF%E5%B0%86%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0%E5%85%B6%E5%AE%83%E4%BB%93%E5%BA%93%E4%B8%8D%E6%98%AF%E9%83%A8%E7%BD%B2%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BB%93%E5%BA%93/</loc>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/%E9%A1%B9%E7%9B%AE/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actiongithub-action%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%8E%9F%E7%90%86github-action%E6%98%AF%E5%B0%86%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0%E5%85%B6%E5%AE%83%E4%BB%93%E5%BA%93%E4%B8%8D%E6%98%AF%E9%83%A8%E7%BD%B2%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BB%93%E5%BA%93/</loc>
     <lastmod>2023-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-action%E7%94%A8github-action%E6%8A%8A%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0github-page%E4%BB%93%E5%BA%93%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89/</loc>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/%E9%A1%B9%E7%9B%AE/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-action%E7%94%A8github-action%E6%8A%8A%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0github-page%E4%BB%93%E5%BA%93%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89/</loc>
     <lastmod>2023-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionai%E7%BC%96%E5%86%99action%E7%A8%8B%E5%BA%8F%E6%8A%80%E5%B7%A7/</loc>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/%E9%A1%B9%E7%9B%AE/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionai%E7%BC%96%E5%86%99action%E7%A8%8B%E5%BA%8F%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2023-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
+  </url><url>
     <loc>https://yichixing.github.io/hugo-Fixlt-dev/tags/github%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2023-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8.gitignore%E7%9A%84%E6%84%8F%E4%B9%89/</loc>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/%E9%A1%B9%E7%9B%AE/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8.gitignore%E7%9A%84%E6%84%8F%E4%B9%89/</loc>
     <lastmod>2023-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github%E9%85%8D%E7%BD%AE-github-pull-%E4%B8%8E-github-pushpull%E5%AF%B9%E5%88%86%E6%94%AF%E5%90%8E%E6%89%8D%E8%83%BD%E7%94%A8push/</loc>
+  </url><url>
+    <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/%E9%A1%B9%E7%9B%AE/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github%E9%85%8D%E7%BD%AE-github-pull-%E4%B8%8E-github-pushpull%E5%AF%B9%E5%88%86%E6%94%AF%E5%90%8E%E6%89%8D%E8%83%BD%E7%94%A8push/</loc>
     <lastmod>2023-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
+  </url><url>
     <loc>https://yichixing.github.io/hugo-Fixlt-dev/tags/github%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2023-02-20T20:14:22+08:00</lastmod>
-  </url>
-  <url>
+  </url><url>
     <loc>https://yichixing.github.io/hugo-Fixlt-dev/posts/first_post/</loc>
     <lastmod>2023-02-20T20:14:22+08:00</lastmod>
   </url>
