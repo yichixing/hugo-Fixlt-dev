@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Github Action：2 用github Action把源码仓库部署项目到github Page仓库的真正意义 - 笔记博客</title><meta name="author" content="">
+<meta name="description" content="(00:09-00:32) 1.2: 手动部署痛点与自动化优势
+♈指出传统方式下，每次修改完文件后，都需要手动将生成的 public 文件夹上传到服务器或托管平台，这个过程比较麻烦。 ♈使用 GitHub Actions 可以实现自动化：自动帮我们生成 public 目录，并将其部署到静态页面网站（如 GitHub Pages）。 ♈优点：只需提交代码 (git push)，后续的构建和部署过程就能自动完成，方便很多。x x &lt;-https://aistudio.google.com/prompts/1dv1SBgRsYgFBSgYe1Dseg0dyYouTZ3_P 《《《♐可以源码仓库和静态资源仓库分开；因为源码仓库很重要，每次项目回溯时回溯源码仓库的代码才有意义，回溯静态资源仓库的代码没意义，这意味着未来版本控制就必须要push推送源码仓库，♓但要推送源码仓库就意味着每次推送都要同时push推送源码仓库和静态资源仓库，手动维护两个独立的 Git，需再手动进行第二次推送 流程退冗余了；♐而有了action部署静态资源后，每次只需要推送最重要的源码仓库，无需做冗余的推送静态资源仓库的步骤，无需再手动进行第二次推送&gt; 《♓我觉得最主要作用是源码静态资源仓库和源代码仓库分开；♐其实不要action也行，不要action就不去推送源代码仓库了，在本地只推送public静态资源即可，反正都是推送步骤不会减少 《《♐用action把部署静态资源到github page的真正价值：多人协作，多人协作时，需要所有人都遵循同样的流程，但很是有人知道我们要推送的是public静态资源，不是源码，这就导致源码把静态资源给污染了（目录混入源代码仓库会极大地污染 Git 历史）》 &lt;设置好 Action 后，你甚至可以通过 GitHub 网页界面直接编辑 Markdown 文件并提交，Action 照样能完成部署，你此时甚至不需要本地安装 Hugo；因此未来你更换了本地开发机器，构建环境都是一致的，每次 Action 运行时，都是用同一个版本、同一种配置的 Hugo 工具在同一种操作系统环境下进行构建，结果更可控&gt; "><meta name="keywords" content='github action的作用'>
+  <meta itemprop="name" content="github action：2 用github action把源码仓库部署项目到github page仓库的真正意义">
+  <meta itemprop="description" content="(00:09-00:32) 1.2: 手动部署痛点与自动化优势
+♈指出传统方式下，每次修改完文件后，都需要手动将生成的 public 文件夹上传到服务器或托管平台，这个过程比较麻烦。 ♈使用 GitHub Actions 可以实现自动化：自动帮我们生成 public 目录，并将其部署到静态页面网站（如 GitHub Pages）。 ♈优点：只需提交代码 (git push)，后续的构建和部署过程就能自动完成，方便很多。x x &lt;-https://aistudio.google.com/prompts/1dv1SBgRsYgFBSgYe1Dseg0dyYouTZ3_P 《《《♐可以源码仓库和静态资源仓库分开；因为源码仓库很重要，每次项目回溯时回溯源码仓库的代码才有意义，回溯静态资源仓库的代码没意义，这意味着未来版本控制就必须要push推送源码仓库，♓但要推送源码仓库就意味着每次推送都要同时push推送源码仓库和静态资源仓库，手动维护两个独立的 Git，需再手动进行第二次推送 流程退冗余了；♐而有了action部署静态资源后，每次只需要推送最重要的源码仓库，无需做冗余的推送静态资源仓库的步骤，无需再手动进行第二次推送&gt; 《♓我觉得最主要作用是源码静态资源仓库和源代码仓库分开；♐其实不要action也行，不要action就不去推送源代码仓库了，在本地只推送public静态资源即可，反正都是推送步骤不会减少 《《♐用action把部署静态资源到github page的真正价值：多人协作，多人协作时，需要所有人都遵循同样的流程，但很是有人知道我们要推送的是public静态资源，不是源码，这就导致源码把静态资源给污染了（目录混入源代码仓库会极大地污染 Git 历史）》 &lt;设置好 Action 后，你甚至可以通过 GitHub 网页界面直接编辑 Markdown 文件并提交，Action 照样能完成部署，你此时甚至不需要本地安装 Hugo；因此未来你更换了本地开发机器，构建环境都是一致的，每次 Action 运行时，都是用同一个版本、同一种配置的 Hugo 工具在同一种操作系统环境下进行构建，结果更可控&gt;">
+  <meta itemprop="datePublished" content="2023-02-20T20:14:22+08:00">
+  <meta itemprop="dateModified" content="2023-02-20T20:14:22+08:00">
+  <meta itemprop="wordCount" content="40">
+  <meta itemprop="keywords" content="Github Action的作用"><meta property="og:url" content="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-action%E7%94%A8github-action%E6%8A%8A%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0github-page%E4%BB%93%E5%BA%93%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89/">
+  <meta property="og:site_name" content="笔记博客">
+  <meta property="og:title" content="github action：2 用github action把源码仓库部署项目到github page仓库的真正意义">
+  <meta property="og:description" content="(00:09-00:32) 1.2: 手动部署痛点与自动化优势
+♈指出传统方式下，每次修改完文件后，都需要手动将生成的 public 文件夹上传到服务器或托管平台，这个过程比较麻烦。 ♈使用 GitHub Actions 可以实现自动化：自动帮我们生成 public 目录，并将其部署到静态页面网站（如 GitHub Pages）。 ♈优点：只需提交代码 (git push)，后续的构建和部署过程就能自动完成，方便很多。x x &lt;-https://aistudio.google.com/prompts/1dv1SBgRsYgFBSgYe1Dseg0dyYouTZ3_P 《《《♐可以源码仓库和静态资源仓库分开；因为源码仓库很重要，每次项目回溯时回溯源码仓库的代码才有意义，回溯静态资源仓库的代码没意义，这意味着未来版本控制就必须要push推送源码仓库，♓但要推送源码仓库就意味着每次推送都要同时push推送源码仓库和静态资源仓库，手动维护两个独立的 Git，需再手动进行第二次推送 流程退冗余了；♐而有了action部署静态资源后，每次只需要推送最重要的源码仓库，无需做冗余的推送静态资源仓库的步骤，无需再手动进行第二次推送&gt; 《♓我觉得最主要作用是源码静态资源仓库和源代码仓库分开；♐其实不要action也行，不要action就不去推送源代码仓库了，在本地只推送public静态资源即可，反正都是推送步骤不会减少 《《♐用action把部署静态资源到github page的真正价值：多人协作，多人协作时，需要所有人都遵循同样的流程，但很是有人知道我们要推送的是public静态资源，不是源码，这就导致源码把静态资源给污染了（目录混入源代码仓库会极大地污染 Git 历史）》 &lt;设置好 Action 后，你甚至可以通过 GitHub 网页界面直接编辑 Markdown 文件并提交，Action 照样能完成部署，你此时甚至不需要本地安装 Hugo；因此未来你更换了本地开发机器，构建环境都是一致的，每次 Action 运行时，都是用同一个版本、同一种配置的 Hugo 工具在同一种操作系统环境下进行构建，结果更可控&gt;">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-02-20T20:14:22+08:00">
+    <meta property="article:modified_time" content="2023-02-20T20:14:22+08:00">
+    <meta property="article:tag" content="Github Action的作用">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="github action：2 用github action把源码仓库部署项目到github page仓库的真正意义">
+  <meta name="twitter:description" content="(00:09-00:32) 1.2: 手动部署痛点与自动化优势
+♈指出传统方式下，每次修改完文件后，都需要手动将生成的 public 文件夹上传到服务器或托管平台，这个过程比较麻烦。 ♈使用 GitHub Actions 可以实现自动化：自动帮我们生成 public 目录，并将其部署到静态页面网站（如 GitHub Pages）。 ♈优点：只需提交代码 (git push)，后续的构建和部署过程就能自动完成，方便很多。x x &lt;-https://aistudio.google.com/prompts/1dv1SBgRsYgFBSgYe1Dseg0dyYouTZ3_P 《《《♐可以源码仓库和静态资源仓库分开；因为源码仓库很重要，每次项目回溯时回溯源码仓库的代码才有意义，回溯静态资源仓库的代码没意义，这意味着未来版本控制就必须要push推送源码仓库，♓但要推送源码仓库就意味着每次推送都要同时push推送源码仓库和静态资源仓库，手动维护两个独立的 Git，需再手动进行第二次推送 流程退冗余了；♐而有了action部署静态资源后，每次只需要推送最重要的源码仓库，无需做冗余的推送静态资源仓库的步骤，无需再手动进行第二次推送&gt; 《♓我觉得最主要作用是源码静态资源仓库和源代码仓库分开；♐其实不要action也行，不要action就不去推送源代码仓库了，在本地只推送public静态资源即可，反正都是推送步骤不会减少 《《♐用action把部署静态资源到github page的真正价值：多人协作，多人协作时，需要所有人都遵循同样的流程，但很是有人知道我们要推送的是public静态资源，不是源码，这就导致源码把静态资源给污染了（目录混入源代码仓库会极大地污染 Git 历史）》 &lt;设置好 Action 后，你甚至可以通过 GitHub 网页界面直接编辑 Markdown 文件并提交，Action 照样能完成部署，你此时甚至不需要本地安装 Hugo；因此未来你更换了本地开发机器，构建环境都是一致的，每次 Action 运行时，都是用同一个版本、同一种配置的 Hugo 工具在同一种操作系统环境下进行构建，结果更可控&gt;">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-action%E7%94%A8github-action%E6%8A%8A%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0github-page%E4%BB%93%E5%BA%93%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89/" title="github action：2 用github action把源码仓库部署项目到github page仓库的真正意义 - 笔记博客" /><link rel="prev" type="text/html" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionai%E7%BC%96%E5%86%99action%E7%A8%8B%E5%BA%8F%E6%8A%80%E5%B7%A7/" title="github action：3 AI编写action程序技巧" /><link rel="next" type="text/html" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actiongithub-action%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%8E%9F%E7%90%86github-action%E6%98%AF%E5%B0%86%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0%E5%85%B6%E5%AE%83%E4%BB%93%E5%BA%93%E4%B8%8D%E6%98%AF%E9%83%A8%E7%BD%B2%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BB%93%E5%BA%93/" title="github action：2 github action部署项目原理：github action是将项目部署到其它仓库，不是部署到自己的仓库" /><link rel="alternate" type="text/markdown" href="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-action%E7%94%A8github-action%E6%8A%8A%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0github-page%E4%BB%93%E5%BA%93%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89/index.md" title="github action：2 用github action把源码仓库部署项目到github page仓库的真正意义 - 笔记博客"><link rel="stylesheet" href="/hugo-Fixlt-dev/css/style.min.css"><link rel="preload" href="/hugo-Fixlt-dev/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/hugo-Fixlt-dev/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/hugo-Fixlt-dev/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/hugo-Fixlt-dev/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "github action：2 用github action把源码仓库部署项目到github page仓库的真正意义",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/yichixing.github.io\/hugo-Fixlt-dev\/posts\/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5\/github-action%E7%94%A8github-action%E6%8A%8A%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0github-page%E4%BB%93%E5%BA%93%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89\/"
+    },"genre": "posts","keywords": "github action的作用","wordcount":  40 ,
+    "url": "https:\/\/yichixing.github.io\/hugo-Fixlt-dev\/posts\/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5\/github-action%E7%94%A8github-action%E6%8A%8A%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0github-page%E4%BB%93%E5%BA%93%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89\/","datePublished": "2023-02-20T20:14:22+08:00","dateModified": "2023-02-20T20:14:22+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Author"
+      },"description": ""
+  }
+  </script><script src="/hugo-Fixlt-dev/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/hugo-Fixlt-dev/" title="笔记博客"><span class="header-title-text">笔记博客</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/hugo-Fixlt-dev/archives/"><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item">
+              <a class="menu-link" href="/hugo-Fixlt-dev/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a class="menu-link" href="/hugo-Fixlt-dev/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/hugo-Fixlt-dev/" title="笔记博客"><span class="header-title-text">笔记博客</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/hugo-Fixlt-dev/archives/"><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item"><a class="menu-link" href="/hugo-Fixlt-dev/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item"><a class="menu-link" href="/hugo-Fixlt-dev/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Github Action：2 用github Action把源码仓库部署项目到github Page仓库的真正意义</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/hugo-Fixlt-dev/categories/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/" class="post-category" title="Category - Github重要认知"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Github重要认知</a> and <a href="/hugo-Fixlt-dev/collections/blog/" class="post-collection" title="Collection - Blog"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> Blog</a></span></div><div class="post-meta-line"><span title="published on 2023-02-20 20:14:22"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-02-20">2023-02-20</time></span>&nbsp;<span title="40 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 100 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>One minute</span>&nbsp;</div>
+    </div><div class="content" id="content"><p>(00:09-00:32) <em><strong>1.2: 手动部署痛点与自动化优势</strong></em></p>
+<ul>
+<li>♈指出传统方式下，每次修改完文件后，都需要<strong>手动将生成</strong>的 <code>public</code> 文件夹<strong>上传</strong>到服务器或托管平台，这个过程比较<strong>麻烦</strong>。</li>
+<li>♈使用 <strong>GitHub Actions</strong> 可以实现<strong>自动化</strong>：<strong>自动</strong>帮我们<strong>生成</strong> <code>public</code> 目录，并将其<strong>部署</strong>到<strong>静态页面网站</strong>（如 GitHub Pages）。</li>
+<li>♈<strong>优点</strong>：只需<strong>提交代码</strong> (<code>git push</code>)，后续的<strong>构建</strong>和<strong>部署</strong>过程就能<strong>自动完成</strong>，<strong>方便</strong>很多。x x &lt;-https://aistudio.google.com/prompts/1dv1SBgRsYgFBSgYe1Dseg0dyYouTZ3_P
+《《《♐可以源码仓库和静态资源仓库分开；因为源码仓库很重要，每次项目回溯时回溯源码仓库的代码才有意义，回溯静态资源仓库的代码没意义，这意味着未来版本控制就必须要push推送源码仓库，♓但要推送源码仓库就意味着每次推送都要同时push推送源码仓库和静态资源仓库，手动维护两个独立的 Git，需再手动进行第二次推送 流程退冗余了；♐而有了action部署静态资源后，每次只需要推送最重要的源码仓库，无需做冗余的推送静态资源仓库的步骤，无需再手动进行第二次推送&gt;
+《♓我觉得最主要作用是源码静态资源仓库和源代码仓库分开；♐其实不要action也行，不要action就不去推送源代码仓库了，在本地只推送public静态资源即可，反正都是推送步骤不会减少
+《《♐用action把部署静态资源到github page的真正价值：多人协作，多人协作时，需要所有人都遵循同样的流程，但很是有人知道我们要推送的是public静态资源，不是源码，这就导致源码把静态资源给污染了（目录混入源代码仓库会极大地污染 Git 历史）》
+&lt;设置好 Action 后，你甚至可以通过 GitHub 网页界面直接编辑 Markdown 文件并提交，Action 照样能完成部署，你此时甚至不需要本地安装 Hugo；因此未来你更换了本地开发机器，构建环境都是一致的，每次 Action 运行时，都是用同一个版本、同一种配置的 Hugo 工具在同一种操作系统环境下进行构建，结果更可控&gt;</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2023-02-20 20:14:22">Updated on 2023-02-20&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-action%E7%94%A8github-action%E6%8A%8A%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0github-page%E4%BB%93%E5%BA%93%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-action%E7%94%A8github-action%E6%8A%8A%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0github-page%E4%BB%93%E5%BA%93%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89/" data-title="Github Action：2 用github Action把源码仓库部署项目到github Page仓库的真正意义" data-hashtags="github action的作用"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-action%E7%94%A8github-action%E6%8A%8A%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0github-page%E4%BB%93%E5%BA%93%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89/" data-hashtag="github action的作用"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://yichixing.github.io/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-action%E7%94%A8github-action%E6%8A%8A%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0github-page%E4%BB%93%E5%BA%93%E7%9A%84%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89/" data-title="Github Action：2 用github Action把源码仓库部署项目到github Page仓库的真正意义"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/hugo-Fixlt-dev/tags/github-action%E7%9A%84%E4%BD%9C%E7%94%A8/" class="post-tag" title="Tags - Github Action的作用">Github Action的作用</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/hugo-Fixlt-dev/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actionai%E7%BC%96%E5%86%99action%E7%A8%8B%E5%BA%8F%E6%8A%80%E5%B7%A7/" class="post-nav-item" rel="prev" title="Github Action：3 AI编写action程序技巧"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Github Action：3 AI编写action程序技巧</a><a href="/hugo-Fixlt-dev/posts/github%E9%87%8D%E8%A6%81%E8%AE%A4%E7%9F%A5/github-actiongithub-action%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%8E%9F%E7%90%86github-action%E6%98%AF%E5%B0%86%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0%E5%85%B6%E5%AE%83%E4%BB%93%E5%BA%93%E4%B8%8D%E6%98%AF%E9%83%A8%E7%BD%B2%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BB%93%E5%BA%93/" class="post-nav-item" rel="next" title="Github Action：2 Github Action部署项目原理：github Action是将项目部署到其它仓库，不是部署到自己的仓库">Github Action：2 Github Action部署项目原理：github Action是将项目部署到其它仓库，不是部署到自己的仓库<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.146.7"><img class="hugo-icon" src="/hugo-Fixlt-dev/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.18"><img class="fixit-icon" src="/hugo-Fixlt-dev/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="/hugo-Fixlt-dev/"></a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="preload" href="/hugo-Fixlt-dev/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/hugo-Fixlt-dev/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/hugo-Fixlt-dev/lib/cookieconsent/cookieconsent.min.css"><script src="/hugo-Fixlt-dev/lib/autocomplete/autocomplete.min.js" defer></script><script src="/hugo-Fixlt-dev/lib/fuse/fuse.min.js" defer></script><script src="/hugo-Fixlt-dev/lib/sharer/sharer.min.js" async defer></script><script src="/hugo-Fixlt-dev/lib/katex/katex.min.js" defer></script><script src="/hugo-Fixlt-dev/lib/katex/auto-render.min.js" defer></script><script src="/hugo-Fixlt-dev/lib/katex/copy-tex.min.js" defer></script><script src="/hugo-Fixlt-dev/lib/katex/mhchem.min.js" defer></script><script src="/hugo-Fixlt-dev/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/hugo-Fixlt-dev/search.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"version":"v0.3.18"};</script><script src="/hugo-Fixlt-dev/js/theme.min.js" defer></script></body>
+</html>
